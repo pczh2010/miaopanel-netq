@@ -1,0 +1,19 @@
+# 签名私钥 —— 绝不提交
+*.key
+*.pem
+keys/
+.secrets/
+*.token
+.env
+
+# 构建产物
+dist/
+*.zip
+manifest.json
+
+# 编辑器 / 系统
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log

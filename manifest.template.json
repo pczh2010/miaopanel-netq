@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "api": 1,
+  "slug": "netq",
+  "name": "网络质量",
+  "version": "1.1.0",
+  "channel": "stable",
+  "summary": "打开即测：线路特征、国内延迟、到服务器的速率，纯前端无需服务",
+  "description_md": "## 网络质量\n\n**纯前端插件，装完打开即用。** 没有二进制、没有常驻服务、不需要编译，也不往服务器装任何东西。\n\n点一次「开始检测」，约 15 秒出四类结果：\n\n1. **线路判断** —— 综合延迟、抖动、丢包给一句结论：\n   - 优化线路特征 / 常规机房云主机 / 普通线路+明显抖动 / 远距离绕路特征 / 连通性差\n2. **我的连接** —— 你的浏览器到服务器的下行与往返延迟\n3. **中国大陆到服务器** —— 阿里云、腾讯、百度等国内节点的实际延迟\n4. **国际对照** —— Cloudflare、jsDelivr，用来对比国内是否更优\n\n### 说明\n线路判断基于延迟/抖动/丢包的外部特征推断，**不能替代 AS 路径或 MTR 的线路认定**。\n要确证是不是 CN2 GIA 之类，需要在服务器上跑 `mtr -rwz` 看途经跳数。\n\n全部测量在浏览器内完成，不上传任何数据。",
+  "category": "monitor",
+  "license": "MIT",
+  "author": {
+    "name": "pczh2010",
+    "email": "pczh2010@gmail.com",
+    "pubkey": ""
+  },
+  "panel": {
+    "min": "1.2.0",
+    "max": ""
+  },
+  "platforms": [
+    {
+      "os": "linux",
+      "arch": "amd64"
+    },
+    {
+      "os": "linux",
+      "arch": "arm64"
+    }
+  ],
+  "permissions": [],
+  "requires": {
+    "commands": [
+      "bash"
+    ],
+    "disk_mb": 20
+  },
+  "runtime": {
+    "type": "script"
+  },
+  "install": {
+    "script": "install.sh",
+    "uninstall": "uninstall.sh",
+    "upgrade": "upgrade.sh",
+    "timeout": 600
+  },
+  "artifact": {
+    "file": "netq-1.1.0.zip",
+    "sha256": "",
+    "size": 0
+  },
+  "changelog_md": "v1.1.0：页面显示版本号，便于确认线上运行的是哪一版",
+  "dev_sig": "",
+  "homepage": "https://github.com/pczh2010/miaopanel-netq"
+}
